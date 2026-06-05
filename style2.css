@@ -101,6 +101,7 @@ header h1 {
     letter-spacing: 1px;
     text-shadow: 0 2px 6px rgba(0, 0, 0, .15);
     transition: transform .25s ease, text-shadow .25s ease;
+    animation: entrandolado 1s ease-out;
 }
 
 header h1:hover {
@@ -139,6 +140,7 @@ nav a {
     text-decoration: none;
     color: var(--texto);
     transition: .3s;
+    animation: navegar 1s ease-out;
 }
 
 nav a:hover {
@@ -181,6 +183,10 @@ nav a:hover {
     color: var(--dourado);
 }
 
+.introducao p {
+    animation: aparecer 2s ease-out;
+}
+
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -203,6 +209,19 @@ nav a:hover {
 .card h3 {
     color: var(--dourado);
     margin-bottom: 10px;
+}
+.centro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.imagem {
+    width: 50%;
+    border-radius: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 2px solid var(--dourado-claro);
 }
 
 footer {
@@ -273,5 +292,39 @@ footer p {
     .banner h2 {
         font-size: 1.3rem;
         text-align: center;
+    }
+}
+
+@keyframes entrandolado{
+    from {
+        opacity: 0;
+        transform: translateX(-600px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes aparecer {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes navegar {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
